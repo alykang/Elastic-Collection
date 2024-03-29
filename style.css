@@ -1,13 +1,14 @@
+
 body{ 
     font-family: Inter;
     overflow-y: hidden;
-
+    margin:0;
+    padding:0;
 }
 .container{
     width:auto;
-    overflow-x: hidden;
-    position: relative;
     display:inline-block;
+    cursor: url(right-arrow.png), auto;
 }
 .line{
     width:100%;
@@ -15,28 +16,27 @@ body{
     background-color:rgb(189, 10, 10);
     position: absolute;
     bottom:70px;
+
 }
 .scrolling-wrapper {
     display:flex;
     justify-content: center;
-    overflow-x: hidden;
-    position: relative;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+
 }
 
 #timeline{
     display: flex;
+    scroll-snap-align: center;
+    scroll-snap-type: x mandatory;
 }
-.section2{
-    width:100vw;
-    height:100vh;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
+
 .cover{
     width:100vw;
     justify-content: center;
     display:flex;
+    cursor: pointer;
 }
 .cover img{
     width:1000px;
@@ -51,12 +51,21 @@ body{
     bottom: 53px;
 }
 
+
 .intro{
     font-size: 70px;
     padding-left:150px;
     padding-right: 150px;
     text-align: center;
     color:rgb(189, 10, 10);
+    width:100vw;
+    height:100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    cursor: url(right-arrow.png), auto;
+    transition: opacity 5s ease-in;
 }
 .section{
     width:100vw;
@@ -72,6 +81,8 @@ body{
     max-height: 35rem;
     max-width: 30rem;
     object-fit: contain;
+    scroll-snap-stop: always; 
+    scroll-snap-align: center;
 }
 
 .details{
@@ -91,20 +102,101 @@ body{
     bottom:100px;
     font-weight:600;
     color:rgb(189, 10, 10);
+    font-family: Pt-serif;
 
 }
 .one{
-    font-size:60px;
+    font-size:70px;
     font-weight: 500;
     color: white;
+    font-style: italic;
+    font-family: PT-serif;
 }
 .two{
     font-size:40px; 
     color: white;
+    font-family: PT-serif;
 }
 .three{
     font-size:20px;
     color: white;
-    font-weight: 200;
+    font-weight: 50;
+}
+.four{
+    font-size:15px;
+    color: white;
+    font-weight: 50;
+    font-style: italic;
 }
 
+
+@media screen and (max-width: 768px) {
+    .one{
+        font-size:40px;
+        font-weight: 500;
+        color: white;
+        font-style: italic;
+        font-family: PT-serif;
+    }
+    .two{
+        font-size:25px; 
+        color: white;
+        font-family: PT-serif;
+    }
+    .three{
+        font-size:12px;
+        color: white;
+        font-weight: 50;
+    }
+    .four{
+        font-size:11px;
+        color: white;
+        font-weight: 50;
+        font-style: italic;
+    }
+    .year{
+        font-size:40px;
+        position:absolute;
+        bottom:100px;
+        font-weight:600;
+        color:rgb(189, 10, 10);
+        font-family: Pt-serif;
+    
+    }
+    .details{
+        width: 800px;
+        height: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color:rgb(189, 10, 10);
+        border-radius:20px;
+        padding:2rem;
+        margin-bottom:150px;
+    }
+    .section{
+        width:100vw;
+        height:100vh;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin-left:5rem;
+        margin-right: 5rem;
+    }
+    
+    .section > img{
+        height: 100%;
+        width: 100%;
+        max-height: 17rem;
+        max-width: 20rem;
+        object-fit: contain;
+    }
+    .line{
+        width:150%;
+        height:3px;
+        background-color:rgb(189, 10, 10);
+        position: absolute;
+        bottom:70px;
+    
+    }
+}
