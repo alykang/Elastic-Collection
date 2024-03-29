@@ -8,7 +8,6 @@ body{
 .container{
     width:auto;
     display:inline-block;
-    cursor: url(right-arrow.png), auto;
 }
 .line{
     width:100%;
@@ -64,8 +63,15 @@ body{
     justify-content: center;
     align-items: center;
     position:absolute;
-    cursor: url(right-arrow.png), auto;
+    cursor: pointer;
     transition: opacity 5s ease-in;
+}
+.intro img{
+    width:6vw;
+    height:auto;
+    position: absolute;
+    top:8rem;
+    transition: opacity 6s ease-in;
 }
 .section{
     width:100vw;
